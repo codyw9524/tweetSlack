@@ -6,7 +6,7 @@ let bodyParser = require('body-parser');
 
 let app = express();
 
-app.use(bodyParser.urlencoded())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 let client = new Twitter({
     consumer_key: '1lToxKBjEbRFwOR2nPscQ717b',
@@ -54,7 +54,7 @@ app.post('/tweet', (req, res) => {
     console.log(req.body);
     client.post('statuses/update', { status: 'First Test' })
         .then(tweet => console.log(tweet))
-        .catch(error => throw error)
+        .catch(error => console.log(error))
     res.end();
 })
 
