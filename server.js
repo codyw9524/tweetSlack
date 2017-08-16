@@ -53,7 +53,7 @@ stream.on('error', function(error) {
 app.post('/tweet', (req, res) => {
     console.log(req.body);
     client.post('statuses/update', { status: 'First Test' })
-        .then(tweet => console.log(tweet));
+        .then(tweet => console.log(tweet))
         .catch(error => throw error)
     res.end();
 })
