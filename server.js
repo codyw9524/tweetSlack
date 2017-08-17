@@ -14,7 +14,9 @@ let client = new Twitter({
     access_token_key: '1454645306-Q029LaF9q9sIGjTsNhUiZjZxHkpKcB7VUlUNdJa',
     access_token_secret: 'KXHLkzmHjwzFXccMUONLbydQtGX5wdlSuej8JO58IZX9Q'
 });
-
+app.get('/', (req, res) => {
+	res.send('Hello World');
+})
 // // let params = { screen_name: 'nodejs' };
 // let stream = client.stream('statuses/filter', { track: '#codydojo' });
 // stream.on('data', function(event) {
