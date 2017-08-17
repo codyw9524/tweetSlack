@@ -8,12 +8,9 @@ let client = new Twitter({
     access_token_key: '1454645306-Q029LaF9q9sIGjTsNhUiZjZxHkpKcB7VUlUNdJa',
     access_token_secret: 'KXHLkzmHjwzFXccMUONLbydQtGX5wdlSuej8JO58IZX9Q'
 });
-// let params = { screen_name: 'nodejs' };
+
 let stream = client.stream('statuses/filter', { track: '#codydojo' });
 stream.on('data', function(event) {
-    console.log('*******************************************************')
-    console.log('event :', event);
-    //url is at event.entities.urls.expanded_url
     if(event){
         let id = event.id_str;
         let user = event.user.screen_name
