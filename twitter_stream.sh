@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 let Twitter = require('twitter');
 let request = require('request');
 
