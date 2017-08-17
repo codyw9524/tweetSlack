@@ -14,6 +14,7 @@ let client = new Twitter({
     access_token_key: '1454645306-Q029LaF9q9sIGjTsNhUiZjZxHkpKcB7VUlUNdJa',
     access_token_secret: 'KXHLkzmHjwzFXccMUONLbydQtGX5wdlSuej8JO58IZX9Q'
 });
+
 // // let params = { screen_name: 'nodejs' };
 // let stream = client.stream('statuses/filter', { track: '#codydojo' });
 // stream.on('data', function(event) {
@@ -52,7 +53,7 @@ let client = new Twitter({
 //set up a post route to receive a request from slack, then post to twitter
 app.post('/tweet', (req, res) => {
     console.log(req.body);
-    client.post('statuses/update', { status: 'First Test' })
+    client.post('statuses/update', JSON.stringify(req.body))
         .then(tweet => console.log(tweet))
         .catch(error => console.log(error))
     res.end();
