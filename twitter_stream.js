@@ -18,7 +18,7 @@ stream.on('data', (event) => {
             "text": `https://twitter.com/${user}/status/${id}`
         }
         let clientServerOptions = {
-            uri: "https://hooks.slack.com/services/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",
+            uri: process.env.SLACK_WEBOOK_URL,
             body: JSON.stringify(slackPost),
             method: "POST",
             headers: {
