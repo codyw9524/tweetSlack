@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config({ path: '/var/www/tweetSlack/keys.env' })
 let Twitter = require('twitter');
 let request = require('request');
 
