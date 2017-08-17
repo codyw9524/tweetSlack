@@ -10,7 +10,7 @@ let client = new Twitter({
 });
 
 let stream = client.stream('statuses/filter', { track: '#codydojo' });
-stream.on('data', function(event) {
+stream.on('data', (event) => {
     if(event){
         let id = event.id_str;
         let user = event.user.screen_name
@@ -33,6 +33,6 @@ stream.on('data', function(event) {
         })
     }
 });
-stream.on('error', function(error) {
+stream.on('error', (error) => {
     throw error;
 });
