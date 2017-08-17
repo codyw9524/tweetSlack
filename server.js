@@ -1,4 +1,4 @@
-let result = require('dotenv').config({ path: '/var/www/tweetSlack/keys.env' });
+require('dotenv').config({ path: '/var/www/tweetSlack/keys.env' });
 let express = require('express');
 let Twitter = require('twitter');
 let bodyParser = require('body-parser');
