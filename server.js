@@ -18,9 +18,9 @@ let client = new Twitter({
 //set up a post route to receive a request from slack, then post to twitter
 app.post('/tweet', (req, res) => {
     console.log(req.body);
-    // client.post('statuses/update', {status: req.body.status})
-    //     .then(tweet => console.log(tweet))
-    //     .catch(error => console.log(error))
+    client.post('statuses/update', { status: req.body.text })
+        .then(tweet => console.log(tweet))
+        .catch(error => console.log(error))
     res.end();
 })
 

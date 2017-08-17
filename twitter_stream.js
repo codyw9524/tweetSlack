@@ -1,7 +1,6 @@
 let Twitter = require('twitter');
 let request = require('request');
 
-
 let client = new Twitter({
     consumer_key: '1lToxKBjEbRFwOR2nPscQ717b',
     consumer_secret: 'Nb6JH3NUiNhrac1lWLFFxVmhaztA9jHfspxp6nkSOVIGROfWvV',
@@ -27,10 +26,7 @@ stream.on('data', function(event) {
         }
         request(clientServerOptions, (error, response) => {
             if(error){
-                console.log('error : ', error);
-            }
-            else if(response){
-                console.log('response :', response);
+                console.log(error);
             }
             return;
         })
